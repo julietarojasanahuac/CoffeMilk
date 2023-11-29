@@ -47,7 +47,7 @@
                   <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="products.php">
+                  <a class="nav-link" href="shop.html">
                     Shop
                   </a>
                 </li>
@@ -105,33 +105,48 @@
   
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
-            <h2 class="fw-bold mb-5">Haz login ahora</h2>
-            <form action="sesion.php" method="POST">
-              <!-- Name input -->
-              <div class="form-outline mb-4">
-                <input type="text" id="username_or_email" name="username_or_email" class="form-control" required />
-                <label class="form-label" for="username_or_email">Nombre de usuario o Email</label>
+            <h2 class="fw-bold mb-5">Disfruta con Coffe Milk</h2>
+            <form action="registro.php" method="POST">
+               <!-- Name input -->
+               <div class="form-outline mb-4">
+                <input type="name" id="form3Example3" class="form-control" />
+                <label class="form-label" for="form3Example3">Nombre</label>
               </div>
-              
+  
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="form3Example3" class="form-control" />
+                <label class="form-label" for="form3Example3">Email</label>
+              </div>
+  
               <!-- Password input -->
               <div class="form-outline mb-4">
-                <input type="password" id="contraseña" name="password" class="form-control" required />
-                <label class="form-label" for="contraseña">Contraseña</label>
+                <input type="password" id="form3Example4" class="form-control" />
+                <label class="form-label" for="form3Example4">Contraseña</label>
+              </div>
+
+              <!-- Birthdate input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form3Example4" class="form-control" />
+                <label class="form-label" for="form3Example4">Fecha de nacimiento</label>
+              </div>
+
+              <!-- Card input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form3Example4" class="form-control" />
+                <label class="form-label" for="form3Example4">Número de tarjeta</label>
+              </div>
+
+              <!-- CP input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form3Example4" class="form-control" />
+                <label class="form-label" for="form3Example4">Código Postal</label>
               </div>
   
               <!-- Submit button -->
               <button type="submit" class="btn btn-primary btn-block mb-4">
-                Log in
+                Registrarme
               </button>
-  
-              <!-- Register button -->
-              <div class="text-center">
-                <p>¿No tienes una cuenta?</p>
-                <button type="button" class="btn btn-light btn-float">
-                  <a href="register.html">Regístrate aquí</a>
-                 </button>
-                </a>
-              </div>
             </form>
           </div>
         </div>

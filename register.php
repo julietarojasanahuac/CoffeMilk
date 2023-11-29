@@ -104,47 +104,59 @@
   
         <div class="row d-flex justify-content-center">
           <div class="col-lg-8">
-            <h2 class="fw-bold mb-5">Haz login ahora</h2>
-            <form action="" method="POST">
-              <?php 
-              include ("sesion.php");
-              ?>
-
-              <!-- Name input -->
-              <div class="form-outline mb-4">
-              <input type="text" id="nombre_usuario_or_email" name="nombre_usuario_or_email" class="form-control" required />
-              <label class="form-label" for="nombre_usuario_or_email">Nombre de usuario o email</label>
+            <h2 class="fw-bold mb-5">Disfruta con Coffe Milk</h2>
+            <form action="registro.php" method="POST">
+               <!-- Name input -->
+               <div class="form-outline mb-4">
+                <input type="name" id="form3Example3" class="form-control" name="nombre" />
+                <label class="form-label" for="form3Example3">Nombre</label>
               </div>
-
+  
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="form3Example3" class="form-control" name="email"/>
+                <label class="form-label" for="form3Example3">Email</label>
+              </div>
+  
               <!-- Password input -->
               <div class="form-outline mb-4">
-              <input type="text" id="contraseña" name="password" class="form-control" required oninput="mostrarContraseña()" onblur="ocultarContraseña()" />
-              <label class="form-label" for="contraseña">Contraseña</label>
+              <input type="text" id="form3Example4" class="form-control" name="contraseña" oninput="mostrarContraseñaRegistro()" onblur="ocultarContraseñaRegistro()" />
+              <label class="form-label" for="form3Example4">Contraseña</label>
               </div>
 
               <script>
-              function mostrarContraseña() {
-              document.getElementById('contraseña').type = 'text';
+              function mostrarContraseñaRegistro() {
+              document.getElementById('form3Example4').type = 'text';
               }
 
-              function ocultarContraseña() {
-              document.getElementById('contraseña').type = 'password';
+              function ocultarContraseñaRegistro() {
+              document.getElementById('form3Example4').type = 'password';
               }
               </script>
 
-              <!-- Submit button -->
-              <button type="submit" name="btningresar" class="btn btn-primary btn-block mb-4">
-              Log in
-              </button>
 
-              <!-- Register button -->
-              <div class="text-center">
-              <p>¿No tienes una cuenta?</p>
-              <button type="button" class="btn btn-light btn-float">
-              <a href="register.php">Regístrate aquí</a>
-              </button>
-                </a>
+              <!-- Birthdate input -->
+              <div class="form-outline mb-4">
+                <input type="date" id="form3Example4" class="form-control" name="fecha_nacimiento"/>
+                <label class="form-label" for="form3Example4">Fecha de nacimiento</label>
               </div>
+
+              <!-- Card input -->
+              <div class="form-outline mb-4">
+                <input type="number" id="form3Example4" class="form-control" name="numero_tarjeta"/>
+                <label class="form-label" for="form3Example4">Número de tarjeta</label>
+              </div>
+
+              <!-- CP input -->
+              <div class="form-outline mb-4">
+                <input type="number" id="form3Example4" class="form-control" name="codigo_postal"/>
+                <label class="form-label" for="form3Example4">Código Postal</label>
+              </div>
+  
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Registrarme
+              </button>
             </form>
           </div>
         </div>

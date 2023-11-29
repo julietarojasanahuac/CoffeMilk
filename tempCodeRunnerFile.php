@@ -1,0 +1,1 @@
+<?php include 'detalle_producto.php';?>
