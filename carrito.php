@@ -51,8 +51,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto']) && isset(
       </head>
 <body>
     <div class="hero_area">
-        <!-- header section starts -->
-        <header class="header_section">
+        <!-- header section strats -->
+     <!-- header section strats -->
+     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.php">
           <span>
@@ -65,52 +66,53 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto']) && isset(
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  ">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
-            </li>
             <li class="nav-item">
+              <a class="nav-link" href="index.php">Inicio</a>
+            </li>
+            <li class="nav-item active">
               <a class="nav-link" href="products.php">
-                Shop
-              </a>
+                Productos
+                <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="why.php">
-                Why Us
+                Por qué nosotros
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="testimonial.php">
-                Testimonial
+                Testimonios
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contacto.php">Contact Us</a>
+              <a class="nav-link" href="contacto.php">Contáctanos</a>
             </li>
           </ul>
           <div class="user_option">
-          <?php
-          if (isset($_SESSION['username'])) {
-            echo '<span>Bienvenido, ' . $_SESSION['username'] . '</span>';
-            echo '<div class="user_option">';
-            echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>';
-            echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>'; // Enlace para cerrar sesión
-            echo '</div>';
-            } else {
+              <?php
+                if (isset($_SESSION['username'])) {
+                  echo '<div class="user_option">';
+                  echo '<span>Bienvenido, ' . $_SESSION['username'] . '</span>';
+                  echo '<a href="profile.php"><i class="fa fa-user-circle" aria-hidden="true"></i> Mi Perfil</a>'; // Enlace a la página de perfil
+                  echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>'; // Enlace para cerrar sesión
+                  echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>'; // Icono de la bolsa de compras
+                  echo '</div>';
+                }     else {
             // Si no está autenticado, muestra el enlace de inicio de sesión
-            echo '<a href="login.php">';
-            echo '<div class="user_option">';
-            echo '<i class="fa fa-user" aria-hidden="true"></i>';
-            echo '<span>Login</span>';
-            echo '</a>';
-            echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>';
-            echo '</div>';
-            }
+                  echo '<div class="user_option">';
+                  echo '<a href="login.php">';
+                  echo '<i class="fa fa-user" aria-hidden="true"></i>';
+                  echo '<span>Login</span>';
+                  echo '</a>';
+              // El siguiente código solo se mostrará si el usuario no está logueado
+                  echo '</div>';
+                }
             ?>
           </div>
         </div>
       </nav>
     </header>
-        <!-- end header section -->
+    <!-- end header section -->
 
 <!-- shopping car section starts-->
 <div class="cart_area">

@@ -28,8 +28,72 @@
         <link href="css/responsive.css" rel="stylesheet" />
       </head>
 <body>
+    <div class="hero_area">
+         <!-- header section strats -->
+    <header class="header_section">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="index.php">
+          <span>
+            Coffee Milk
+          </span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  ">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="products.php">
+                Productos
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="why.php">
+                Por qué nosotros
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="testimonial.php">
+                Testimonios
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.php">Contáctanos</a>
+            </li>
+          </ul>
+          <div class="user_option">
+              <?php
+                if (isset($_SESSION['username'])) {
+                  echo '<div class="user_option">';
+                  echo '<span>Bienvenido, ' . $_SESSION['username'] . '</span>';
+                  echo '<a href="profile.php"><i class="fa fa-user-circle" aria-hidden="true"></i> Mi Perfil</a>'; // Enlace a la página de perfil
+                  echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>'; // Enlace para cerrar sesión
+                  echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>'; // Icono de la bolsa de compras
+                  echo '</div>';
+                }     else {
+            // Si no está autenticado, muestra el enlace de inicio de sesión
+                  echo '<div class="user_option">';
+                  echo '<a href="login.php">';
+                  echo '<i class="fa fa-user" aria-hidden="true"></i>';
+                  echo '<span>Login</span>';
+                  echo '</a>';
+              // El siguiente código solo se mostrará si el usuario no está logueado
+                  echo '</div>';
+                }
+            ?>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- end header section -->
+
     <!-- Contenido de la página -->
-    <div class="container">
+    <section class="compra-done">
+      <div class="container">
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2>¡Compra Exitosa!</h2>
@@ -39,7 +103,7 @@
             </div>
         </div>
     </div>
-
+  </section>
     <!-- Resto de tu código HTML -->
 
 </body>

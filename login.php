@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -29,8 +33,8 @@
       </head>
 <body>
 <div class="hero_area">
-    <!-- header section strats -->
-    <header class="header_section">
+     <!-- header section strats -->
+     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.php">
           <span>
@@ -43,47 +47,53 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  ">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php">Inicio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="products.php">
-                Shop
+                Productos
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="why.php">
-                Why Us
+                Por qué nosotros
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="testimonial.php">
-                Testimonial
+                Testimonios
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contacto.php">Contact Us</a>
+              <a class="nav-link" href="contacto.php">Contáctanos</a>
             </li>
           </ul>
           <div class="user_option">
-          <?php
-          if (isset($_SESSION['nombre_usuario'])) {
-          echo '<span><i class="fa fa-user" aria-hidden="true"></i>' . $_SESSION['nombre_usuario'] . '</span>';
-          echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>';
-          } else {
-          echo '<a href="login.php"><i class="fa fa-user" aria-hidden="true"></i><span>Login</span></a>';
-          }
-          ?>
-              <form class="form-inline ">
-              <button class="btn nav_search-btn" type="submit">
-              <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </form>
+              <?php
+                if (isset($_SESSION['username'])) {
+                  echo '<div class="user_option">';
+                  echo '<span>Bienvenido, ' . $_SESSION['username'] . '</span>';
+                  echo '<a href="profile.php"><i class="fa fa-user-circle" aria-hidden="true"></i> Mi Perfil</a>'; // Enlace a la página de perfil
+                  echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>'; // Enlace para cerrar sesión
+                  echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>'; // Icono de la bolsa de compras
+                  echo '</div>';
+                }     else {
+            // Si no está autenticado, muestra el enlace de inicio de sesión
+                  echo '<div class="user_option">';
+                  echo '<a href="login.php">';
+                  echo '<i class="fa fa-user" aria-hidden="true"></i>';
+                  echo '<span>Login</span>';
+                  echo '<span class="sr-only">(current)</span></a>';
+              // El siguiente código solo se mostrará si el usuario no está logueado
+                  echo '</div>';
+                }
+            ?>
           </div>
         </div>
       </nav>
     </header>
-        <!-- end header section -->
+    <!-- end header section -->
     
    <!-- Section: Design Block -->
 <section class="login_section">
@@ -98,8 +108,7 @@
           margin-top: -100px;
           background: hsla(0, 0%, 100%, 0.8);
           backdrop-filter: blur(30px);
-          border-radius: 25px;
-          ">
+          border-radius: 25px;">
       <div class="card-body py-5 px-md-5">
   
         <div class="row d-flex justify-content-center">
@@ -107,8 +116,7 @@
             <h2 class="fw-bold mb-5">Haz login ahora</h2>
             <form action="" method="POST">
               <?php 
-              include ("sesion.php");
-              ?>
+              include ("sesion.php");?>
 
               <!-- Name input -->
               <div class="form-outline mb-4">
@@ -153,6 +161,87 @@
   </section>
   <!-- Section: Design Block -->
 
+  <!-- info section -->
+  <section class="info_section  layout_padding2-top">
+    <div class="social_container">
+      <div class="social_box">
+        <a href="">
+          <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="">
+          <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+      </div>
+    </div>
+    <div class="info_container ">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              Sobre nosotros
+            </h6>
+            <p>
+            Descubre nuestra historia de pasión por la calidad y servicio al cliente. Somos tu destino confiable para productos excepcionales.
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <div class="info_form ">
+              <h5>
+                Newsletter
+              </h5>
+              <form action="#">
+                <input type="email" placeholder="Ingresa tu email">
+                <button>
+                  Subscríbete
+                </button>
+              </form>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              Ayuda
+            </h6>
+            <p>
+            ¿Necesitas asistencia? Estamos aquí para hacer tu experiencia de compra sin complicaciones. 
+            Tu satisfacción es nuestra prioridad.
+            </p>
+          </div>
+          <div class="col-md-6 col-lg-3">
+            <h6>
+              Contáctanos
+            </h6>
+            <div class="info_link-box">
+              <a href="">
+                <i class="fa fa-map-marker" aria-hidden="true"></i>
+                <span> Champ de Mars, 5 Av. Anatole France, 75007 Paris, France.</span>
+              </a>
+              <a href="">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <span>+52 12345678901</span>
+              </a>
+              <a href="">
+                <i class="fa fa-envelope" aria-hidden="true"></i>
+                <span> coffemilk@gmail.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- footer section -->
+    <footer class=" footer_section">
+      <div class="container">
+        <p>
+          &copy; <span id="displayYear"></span> All Rights Reserved by
+          <a href="https://html.design/">Coffeemilk</a>
+        </p>
+      </div>
+    </footer>
+    <!-- footer section -->
+  </section>
+  <!-- end info section -->
+
+
   <script src="js/jquery-3.4.1.min.js"></script>
   <script src="js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
@@ -160,4 +249,5 @@
   <script src="js/custom.js"></script>
 
 </body>
+
 </html>

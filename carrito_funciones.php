@@ -239,19 +239,29 @@ function mostrarFormularioTarjeta() {
 // Función para mostrar el resumen de compra
 function mostrarResumenCompra($monto_final) {
     echo '
-        <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Resumen de compra</div>
-        <ul class="list-unstyled">
-            <li class="d-flex justify-content-between py-2 border-bottom">
-                <span class="text-muted">Subtotal del pedido</span>
-                <span>$' . number_format($monto_final, 2) . '</span>
-            </li>
-            <li class="d-flex justify-content-between py-2 border-bottom">
-                <span class="text-muted">Total del pedido</span>
-                <span>$' . number_format($monto_final, 2) . '</span>
-            </li>
-        </ul>
-        
-        <a id="proceder_pago_btn" href="completar_compra.php" class="btn btn-dark rounded-pill btn-block mt-3" disabled>Proceder al pago</a>
+    <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Resumen de compra</div>
+    <ul class="list-unstyled">
+        <li class="d-flex justify-content-between py-2 border-bottom">
+            <span class="text-muted">Subtotal del pedido</span>
+            <span>$' . number_format($monto_final, 2) . '</span>
+        </li>
+        <li class="d-flex justify-content-between py-2 border-bottom">
+            <span class="text-muted">Total del pedido</span>
+            <span>$' . number_format($monto_final, 2) . '</span>
+        </li>
+    </ul>
+
+    <button id="proceder_pago_btn" class="btn btn-dark rounded-pill btn-block mt-3" disabled>Proceder al pago</button>
+
+    <script>
+        // Manejador de clic para el botón de proceder al pago
+        document.getElementById("proceder_pago_btn").addEventListener("click", function() {
+            // Realiza la acción en completar_compra.php (puedes incluir el código PHP directamente aquí)
+            
+            // Después de ejecutar la acción, redirige a compra_exitosa.php
+            window.location.href = "compra_exitosa.php";
+        });
+    </script>
     ';
 }
 

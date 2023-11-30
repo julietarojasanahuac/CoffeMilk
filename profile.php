@@ -84,8 +84,9 @@ $con->close();
       </head>
 <body class="profile-body">
     <div class="hero_area">
-        <!-- header section starts -->
-        <header class="header_section">
+        <!-- header section strats -->
+    <!-- header section strats -->
+    <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.php">
           <span>
@@ -98,47 +99,48 @@ $con->close();
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  ">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+            <li class="nav-item">
+              <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="products.php">
-                Shop
+                Productos
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="why.php">
-                Why Us
+                Por qué nosotros
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="testimonial.php">
-                Testimonial
+                Testimonios
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contacto.php">Contact Us</a>
+              <a class="nav-link" href="contacto.php">Contáctanos</a>
             </li>
           </ul>
           <div class="user_option">
-          <?php
-          if (isset($_SESSION['username'])) {
-            echo '<div class="user_option">';
-            echo '<span>Bienvenido, ' . $_SESSION['username'] . '</span>';
-            echo '<a href="profile.php"><i class="fa fa-user-circle" aria-hidden="true"></i> Mi Perfil</a>'; // Enlace a la página de perfil
-            echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>'; // Enlace para cerrar sesión
-            echo '</div>';
-          } else {
-    // Si no está autenticado, muestra el enlace de inicio de sesión
-            echo '<div class="user_option">';
-            echo '<a href="login.php">';
-            echo '<i class="fa fa-user" aria-hidden="true"></i>';
-            echo '<span>Login</span>';
-            echo '</a>';
-            echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>';
-            echo '</div>';
-          }
-          ?>
+              <?php
+                if (isset($_SESSION['username'])) {
+                  echo '<div class="user_option">';
+                  echo '<span>Bienvenido, ' . $_SESSION['username'] . '</span>';
+                  echo '<a href="profile.php"><i class="fa fa-user-circle" aria-hidden="true"></i> Mi Perfil</a>'; // Enlace a la página de perfil
+                  echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>'; // Enlace para cerrar sesión
+                  echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>'; // Icono de la bolsa de compras
+                  echo '</div>';
+                }     else {
+            // Si no está autenticado, muestra el enlace de inicio de sesión
+                  echo '<div class="user_option">';
+                  echo '<a href="login.php">';
+                  echo '<i class="fa fa-user" aria-hidden="true"></i>';
+                  echo '<span>Login</span>';
+                  echo '</a>';
+              // El siguiente código solo se mostrará si el usuario no está logueado
+                  echo '</div>';
+                }
+            ?>
           </div>
         </div>
       </nav>
@@ -146,31 +148,31 @@ $con->close();
     <!-- end header section -->
 
     <section class="profile_section layout_padding">
-    <div class="container emp-profile">
+        <div class="container emp-profile">
             <form method="post">
-                <div class="row">
-                    <div class="col-md-6">
-                        <div class="profile-head">
-                                    <h2>
-                                        Perfil del usuario
-                                    </h2>
-                                    
-                            <ul class="nav nav-tabs" id="myTab" role="tablist">
-                                <li class="nav-item">
-                                    <a class="nav-link active show" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tus datos</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Historial de compras</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                </div>
+            <div class="row">
+        <div class="col-md-6">
+        <div class="profile-head">
+            <h2 class="text-left">
+                Perfil del usuario
+            </h2>
+            <div class="row justify-content-end">
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <h5 class="nav-link show active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Tus datos</h5>
+        </li>
+        <li class="nav-item">
+            <h5 class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Historial de compras</h5>
+        </li>
+    </ul>
+</div>
+        </div>
+    </div>
+</div>
                 <div class="row">
                     <div class="col-md-4">
                         <div class="profile-work">
-                            <p>Navegador</p>
+                            <h5>Navegador</h5>
                             <a href="index.php">Inicio</a><br/>
                             <a href="products.php">Productos</a><br/>
                             <a href="whyus.php">Nosotros</a><br/>
@@ -257,7 +259,7 @@ $con->close();
 
 
     <!-- info section -->
-    <section class="info_section  layout_padding2-top">
+  <section class="info_section  layout_padding2-top">
     <div class="social_container">
       <div class="social_box">
         <a href="">
@@ -273,10 +275,10 @@ $con->close();
         <div class="row">
           <div class="col-md-6 col-lg-3">
             <h6>
-              ABOUT US
+              Sobre nosotros
             </h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+            Descubre nuestra historia de pasión por la calidad y servicio al cliente. Somos tu destino confiable para productos excepcionales.
             </p>
           </div>
           <div class="col-md-6 col-lg-3">
@@ -285,55 +287,54 @@ $con->close();
                 Newsletter
               </h5>
               <form action="#">
-                <input type="email" placeholder="Enter your email">
+                <input type="email" placeholder="Ingresa tu email">
                 <button>
-                  Subscribe
+                  Subscríbete
                 </button>
               </form>
             </div>
           </div>
           <div class="col-md-6 col-lg-3">
             <h6>
-              NEED HELP
+              Ayuda
             </h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+            ¿Necesitas asistencia? Estamos aquí para hacer tu experiencia de compra sin complicaciones. 
+            Tu satisfacción es nuestra prioridad.
             </p>
           </div>
           <div class="col-md-6 col-lg-3">
             <h6>
-              CONTACT US
+              Contáctanos
             </h6>
             <div class="info_link-box">
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span> Gb road 123 london Uk </span>
+                <span> Champ de Mars, 5 Av. Anatole France, 75007 Paris, France.</span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>+01 12345678901</span>
+                <span>+52 12345678901</span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span> demo@gmail.com</span>
+                <span> coffemilk@gmail.com</span>
               </a>
             </div>
           </div>
         </div>
       </div>
     </div>
-
     <!-- footer section -->
     <footer class=" footer_section">
       <div class="container">
         <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a>
+          &copy; <span id="displayYear"></span> All Rights Reserved by
+          <a href="https://html.design/">Coffeemilk</a>
         </p>
       </div>
     </footer>
     <!-- footer section -->
-
   </section>
   <!-- end info section -->
 

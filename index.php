@@ -61,46 +61,47 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  ">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="products.php">
-                Shop
+                Productos
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="why.php">
-                Why Us
+                Por qué nosotros
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="testimonial.php">
-                Testimonial
+                Testimonios
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contacto.php">Contact Us</a>
+              <a class="nav-link" href="contacto.php">Contáctanos</a>
             </li>
           </ul>
           <div class="user_option">
-          <?php
-          if (isset($_SESSION['username'])) {
-            echo '<div class="user_option">';
-            echo '<span>Bienvenido, ' . $_SESSION['username'] . '</span>';
-            echo '<a href="profile.php"><i class="fa fa-user-circle" aria-hidden="true"></i> Mi Perfil</a>'; // Enlace a la página de perfil
-            echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>'; // Enlace para cerrar sesión
-            echo '</div>';
-          } else {
-    // Si no está autenticado, muestra el enlace de inicio de sesión
-            echo '<div class="user_option">';
-            echo '<a href="login.php">';
-            echo '<i class="fa fa-user" aria-hidden="true"></i>';
-            echo '<span>Login</span>';
-            echo '</a>';
-            echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>';
-            echo '</div>';
-          }
-          ?>
+              <?php
+                if (isset($_SESSION['username'])) {
+                  echo '<div class="user_option">';
+                  echo '<span>Bienvenido, ' . $_SESSION['username'] . '</span>';
+                  echo '<a href="profile.php"><i class="fa fa-user-circle" aria-hidden="true"></i> Mi Perfil</a>'; // Enlace a la página de perfil
+                  echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>'; // Enlace para cerrar sesión
+                  echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>'; // Icono de la bolsa de compras
+                  echo '</div>';
+                }     else {
+            // Si no está autenticado, muestra el enlace de inicio de sesión
+                  echo '<div class="user_option">';
+                  echo '<a href="login.php">';
+                  echo '<i class="fa fa-user" aria-hidden="true"></i>';
+                  echo '<span>Login</span>';
+                  echo '</a>';
+              // El siguiente código solo se mostrará si el usuario no está logueado
+                  echo '</div>';
+                }
+            ?>
           </div>
         </div>
       </nav>
@@ -118,14 +119,18 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
                   <div class="col-md-7">
                     <div class="detail-box">
                       <h1>
-                        Welcome To Our <br>
+                        Bienvinidos a nuestra <br>
                         Coffee Shop
                       </h1>
                       <p>
-                        Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.
+                      Te damos una cálida bienvenida a nuestra acogedora Coffee Shop, donde cada taza cuenta una historia
+                       y cada aroma despierta emociones. En nuestro espacio, nos esforzamos por ofrecer experiencias únicas, 
+                       cuidadosamente elaboradas para satisfacer tus gustos más exigentes. Disfruta de la fusión perfecta 
+                       entre el arte del café y un ambiente relajado. Nos comprometemos a brindarte momentos inolvidables, 
+                       taza tras taza. ¡Bienvenido a tu refugio cafetero!
                       </p>
                       <a href="contact.php">
-                        Contact Us
+                        Contáctanos
                       </a>
                     </div>
                   </div>
@@ -143,14 +148,17 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
                   <div class="col-md-7">
                     <div class="detail-box">
                       <h1>
-                        Welcome To Our <br>
-                        Coffee Shop
+                        Descubre Nuestro Menú <br>
                       </h1>
                       <p>
-                        Sequi perspiciatis nulla reiciendis, rem, tenetur impedit, eveniet non necessitatibus error distinctio mollitia suscipit. Nostrum fugit doloribus consequatur distinctio esse, possimus maiores aliquid repellat beatae cum, perspiciatis enim, accusantium perferendis.
+                      Después de darte la bienvenida a nuestra Coffee Shop, te invitamos a explorar 
+                      nuestro variado menú que ha sido cuidadosamente curado para satisfacer todos los gustos. 
+                      Desde espresso intenso hasta suaves cafés especiales, acompañados de deliciosos postres 
+                      y bocadillos que complementarán tu experiencia. Nuestro compromiso es ofrecerte no solo una bebida, 
+                      sino un deleite para tus sentidos. ¿Listo para sumergirte en un mundo de sabores y aromas inigualables?
                       </p>
-                      <a href="contact.php">
-                        Contact Us
+                      <a href="products.php">
+                      Ver más
                       </a>
                     </div>
                   </div>
@@ -177,18 +185,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
         </div>
       </div>
     </section>
-
     <!-- end slider section -->
   </div>
   <!-- end hero area -->
 
   <!-- shop section -->
-
   <section class="shop_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Latest Products
+          Últimos Productos
         </h2>
       </div>
       <div class="row">
@@ -248,18 +254,16 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
           // Cierra la conexión a la base de datos
           mysqli_close($con);
           ?>
-      <div style="text-align: center" class="btn-box">
-        <a href="products.php" style="display: inline-block; margin: 0 auto;">
-          View All Products
+      </div>
+      <div style="text-align: center; display: flex; align-items: center; justify-content: center;" class="btn-box">
+        <a href="products.php" style="display: inline-block;">
+          Ver todos los productos
         </a>
       </div>
-    </div>
   </section>
-
   <!-- end shop section -->
 
   <!-- saving section -->
-
   <section class="saving_section ">
     <div class="box">
       <div class="container-fluid">
@@ -273,19 +277,21 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
             <div class="detail-box">
               <div class="heading_container">
                 <h2>
-                  Our new <br>
-                  favorites 
+                  Nuestros <br>
+                  favoritos 
                 </h2>
               </div>
               <p>
-                Qui ex dolore at repellat, quia neque doloribus omnis adipisci, ipsum eos odio fugit ut eveniet blanditiis praesentium totam non nostrum dignissimos nihil eius facere et eaque. Qui, animi obcaecati.
+              ¡Descubre nuestros productos favoritos! En este exclusivo catálogo, 
+              seleccionamos cuidadosamente los artículos más destacados para que encuentres exactamente lo que estás buscando. 
+              Sumérgete en la experiencia de compra definitiva y encuentra tus nuevos favoritos. ¡Explora ahora y deja que tus elecciones hablen por sí mismas!
               </p>
               <div class="btn-box">
-                <a href="#" class="btn1">
-                  Buy Now
+                <a href="login.php" class="btn1">
+                  Compra ahora
                 </a>
-                <a href="#" class="btn2">
-                  See More
+                <a href="products.php" class="btn2">
+                  Ver más
                 </a>
               </div>
             </div>
@@ -294,16 +300,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
       </div>
     </div>
   </section>
-
   <!-- end saving section -->
 
   <!-- why section -->
-
   <section class="why_section layout_padding">
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Why Shop With Us
+          ¿Por qué comprar con nosotros?
         </h2>
       </div>
       <div class="row">
@@ -398,10 +402,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
             </div>
             <div class="detail-box">
               <h5>
-                Fast Delivery
+                Entrega rápida
               </h5>
               <p>
-                variations of passages of Lorem Ipsum available
+              Satisface tus antojos al instante con nuestra entrega rápida. 
+              Disfruta de postres y café frescos directamente en tu puerta, porque lo bueno no puede esperar.
               </p>
             </div>
           </div>
@@ -513,10 +518,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
             </div>
             <div class="detail-box">
               <h5>
-                Free Shiping
+                Envío gratis
               </h5>
               <p>
-                variations of passages of Lorem Ipsum available
+              Recibe tus caprichos dulces y tu café favorito en la puerta de tu casa, 
+              ¡sin costos adicionales! Porque la felicidad debería ser libre, al igual que nuestro envío.
               </p>
             </div>
           </div>
@@ -534,10 +540,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
             </div>
             <div class="detail-box">
               <h5>
-                Best Quality
+                Calidad premium
               </h5>
               <p>
-                variations of passages of Lorem Ipsum available
+              Descubre una deliciosa experiencia con nuestros postres y café, 
+              cada bocado es una obra maestra artesanal con los mejores ingredientes.
               </p>
             </div>
           </div>
@@ -545,12 +552,9 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
       </div>
     </div>
   </section>
-
   <!-- end why section -->
 
-
   <!-- gift section -->
-
   <section class="gift_section layout_padding-bottom">
     <div class="box ">
       <div class="container-fluid">
@@ -566,19 +570,19 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
             <div class="detail-box">
               <div class="heading_container">
                 <h2>
-                  Coffee for your <br>
-                  loved ones
+                  Comparte cafe con tus  <br>
+                  seres más queridos
                 </h2>
               </div>
               <p>
-                Omnis ex nam laudantium odit illum harum, excepturi accusamus at corrupti, velit blanditiis unde perspiciatis, vitae minus culpa? Beatae at aut consequuntur porro adipisci aliquam eaque iste ducimus expedita accusantium?
+              ¡Compartir un café con tus seres más queridos! Imagina la calidez de nuestras mezclas exclusivas 
+              y la dulce complicidad que solo un buen café puede crear. Ahora, puedes enviar esa experiencia 
+              directamente a sus puertas. Desde el reconfortante aroma hasta el sabor inigualable, este gesto 
+              es más que una bebida; es un abrazo en cada sorbo.
               </p>
               <div class="btn-box">
-                <a href="#" class="btn1">
-                  Buy Now
-                </a>
-                <a href="#" class="btn2">
-                  See More
+                <a href="products.php" class="btn2">
+                Comprar ahora
                 </a>
               </div>
             </div>
@@ -587,18 +591,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
       </div>
     </div>
   </section>
-
-
   <!-- end gift section -->
 
-
-  <!-- contact section -->
-
-  <section class="contact_section ">
+ <!-- contact section -->
+ <section class="contact_section layout_padding">
     <div class="container px-0">
-      <div class="heading_container ">
-        <h2 class="">
-          Contact Us
+    <div class="heading_container heading_center">
+        <h2>
+          Contáctanos
         </h2>
       </div>
     </div>
@@ -612,22 +612,22 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
           </div>
         </div>
         <div class="col-md-6 col-lg-5 px-0">
-          <form action="#">
+          <form action="testimonios.php" method="POST">>
             <div>
-              <input type="text" placeholder="Name" />
+              <input type="text" placeholder="Nombre" />
             </div>
             <div>
               <input type="email" placeholder="Email" />
             </div>
             <div>
-              <input type="text" placeholder="Phone" />
+              <input type="number" placeholder="Teléfono" />
             </div>
             <div>
-              <input type="text" class="message-box" placeholder="Message" />
+              <input type="text" class="message-box" placeholder="Mensaje" />
             </div>
             <div class="d-flex ">
               <button>
-                SEND
+                ENVIAR
               </button>
             </div>
           </form>
@@ -635,7 +635,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
       </div>
     </div>
   </section>
-
   <!-- end contact section -->
 
   <!-- client section -->
@@ -643,7 +642,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Testimonial
+          Testimonios
         </h2>
       </div>
     </div>
@@ -728,7 +727,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
   <!-- end client section -->
 
   <!-- info section -->
-
   <section class="info_section  layout_padding2-top">
     <div class="social_container">
       <div class="social_box">
@@ -745,10 +743,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
         <div class="row">
           <div class="col-md-6 col-lg-3">
             <h6>
-              ABOUT US
+              Sobre nosotros
             </h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+            Descubre nuestra historia de pasión por la calidad y servicio al cliente. Somos tu destino confiable para productos excepcionales.
             </p>
           </div>
           <div class="col-md-6 col-lg-3">
@@ -757,37 +755,38 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
                 Newsletter
               </h5>
               <form action="#">
-                <input type="email" placeholder="Enter your email">
+                <input type="email" placeholder="Ingresa tu email">
                 <button>
-                  Subscribe
+                  Subscríbete
                 </button>
               </form>
             </div>
           </div>
           <div class="col-md-6 col-lg-3">
             <h6>
-              NEED HELP
+              Ayuda
             </h6>
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet, consectetur adipiscing elit, sed doLorem ipsum dolor sit amet,
+            ¿Necesitas asistencia? Estamos aquí para hacer tu experiencia de compra sin complicaciones. 
+            Tu satisfacción es nuestra prioridad.
             </p>
           </div>
           <div class="col-md-6 col-lg-3">
             <h6>
-              CONTACT US
+              Contáctanos
             </h6>
             <div class="info_link-box">
               <a href="">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
-                <span> Gb road 123 london Uk </span>
+                <span> Champ de Mars, 5 Av. Anatole France, 75007 Paris, France.</span>
               </a>
               <a href="">
                 <i class="fa fa-phone" aria-hidden="true"></i>
-                <span>+01 12345678901</span>
+                <span>+52 12345678901</span>
               </a>
               <a href="">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
-                <span> demo@gmail.com</span>
+                <span> coffemilk@gmail.com</span>
               </a>
             </div>
           </div>
@@ -798,15 +797,13 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
     <footer class=" footer_section">
       <div class="container">
         <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a>
+          &copy; <span id="displayYear"></span> All Rights Reserved by
+          <a href="https://html.design/">Coffeemilk</a>
         </p>
       </div>
     </footer>
     <!-- footer section -->
-
   </section>
-
   <!-- end info section -->
 
 

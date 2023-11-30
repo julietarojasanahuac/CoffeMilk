@@ -11,20 +11,39 @@ if (isset($_SESSION['carrito']) && !empty($_SESSION['carrito'])) {
         $producto_ID = $producto['ID_producto'];
 
         // Guarda la información de la compra en tu base de datos
-        // Esto es solo un ejemplo, asegúrate de utilizar consultas preparadas para evitar SQL injection
         $con = mysqli_connect("localhost", "root", "", "coffeeshop");
 
+        // Verifica la conexión exitosa
         if (mysqli_connect_errno()) {
             echo "Failed to connect to MySQL: " . mysqli_connect_error();
+            exit();
         }
 
-        $sql = "INSERT INTO historial_compras (usuario_ID, producto_ID) VALUES ('$usuario_ID', '$producto_ID')";
-        mysqli_query($con, $sql);
+        // Realiza la inserción en la base de datos
+        $sql = "INSERT INTO historial_compras (usuario_ID, producto_ID) VALUES (?, ?)";
+        $stmt = mysqli_prepare($con, $sql);
+        mysqli_stmt_bind_param($stmt, "ii", $usuario_ID, $producto_ID);
+
+        if (mysqli_stmt_execute($stmt)) {
+            echo "Record inserted successfully";
+        } else {
+            echo "Error: " . $sql . "<br>" . mysqli_error($con);
+        }
 
         // Actualiza la existencia del producto en la base de datos (por ejemplo, resta 1)
-        $sqlUpdate = "UPDATE productos SET cantidad = cantidad - 1 WHERE ID_producto = '$producto_ID'";
-        mysqli_query($con, $sqlUpdate);
+        $sqlUpdate = "UPDATE productos SET cantidad = cantidad - 1 WHERE ID_producto = ?";
+        $stmtUpdate = mysqli_prepare($con, $sqlUpdate);
+        mysqli_stmt_bind_param($stmtUpdate, "i", $producto_ID);
 
+        if (mysqli_stmt_execute($stmtUpdate)) {
+            echo "Record updated successfully";
+        } else {
+            echo "Error: " . $sqlUpdate . "<br>" . mysqli_error($con);
+        }
+
+        // Cierra la conexión y el statement
+        mysqli_stmt_close($stmt);
+        mysqli_stmt_close($stmtUpdate);
         mysqli_close($con);
     }
 

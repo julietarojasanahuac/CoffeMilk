@@ -62,8 +62,8 @@ $monto_final = calcularMontoFinal($_SESSION['carrito']);
       </head>
 <body>
 <div class="hero_area">
-        <!-- header section starts -->
-        <header class="header_section">
+     <!-- header section strats -->
+     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.php">
           <span>
@@ -77,51 +77,52 @@ $monto_final = calcularMontoFinal($_SESSION['carrito']);
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  ">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="index.php">Inicio<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="products.php">
-                Shop
+                Productos
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="why.php">
-                Why Us
+                Por qué nosotros
               </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="testimonial.php">
-                Testimonial
+                Testimonios
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contacto.php">Contact Us</a>
+              <a class="nav-link" href="contacto.php">Contáctanos</a>
             </li>
           </ul>
           <div class="user_option">
-          <?php
-          if (isset($_SESSION['username'])) {
-            echo '<span>Bienvenido, ' . $_SESSION['username'] . '</span>';
-            echo '<div class="user_option">';
-            echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>';
-            echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>'; // Enlace para cerrar sesión
-            echo '</div>';
-            } else {
+              <?php
+                if (isset($_SESSION['username'])) {
+                  echo '<div class="user_option">';
+                  echo '<span>Bienvenido, ' . $_SESSION['username'] . '</span>';
+                  echo '<a href="profile.php"><i class="fa fa-user-circle" aria-hidden="true"></i> Mi Perfil</a>'; // Enlace a la página de perfil
+                  echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>'; // Enlace para cerrar sesión
+                  echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>'; // Icono de la bolsa de compras
+                  echo '</div>';
+                }     else {
             // Si no está autenticado, muestra el enlace de inicio de sesión
-            echo '<a href="login.php">';
-            echo '<div class="user_option">';
-            echo '<i class="fa fa-user" aria-hidden="true"></i>';
-            echo '<span>Login</span>';
-            echo '</a>';
-            echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>';
-            echo '</div>';
-            }
+                  echo '<div class="user_option">';
+                  echo '<a href="login.php">';
+                  echo '<i class="fa fa-user" aria-hidden="true"></i>';
+                  echo '<span>Login</span>';
+                  echo '</a>';
+              // El siguiente código solo se mostrará si el usuario no está logueado
+                  echo '</div>';
+                }
             ?>
           </div>
         </div>
       </nav>
     </header>
-     <!-- end header section -->
+    <!-- end header section -->
 
         <div class="cart_area">
         <div class="px-4 px-lg-0">
@@ -169,39 +170,3 @@ $monto_final = calcularMontoFinal($_SESSION['carrito']);
 
 </body>
 </html>
-
-
-
-
-<!-- <php
-                            // Muestra el formulario solo si no se ha proporcionado el número de tarjeta
-                            if (!isset($_POST['numero_tarjeta'])) {
-                            ?>
-                                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Ingresa tu número de tarjeta</div>
-                                <form method="post" action="checkout.php">
-                                    <div class="p-4">
-                                        <p class="font-italic mb-4">Si tienes un código de cupón, ingrésalo en la casilla a continuación</p>
-                                        <div class="input-group mb-4 border rounded-pill p-2">
-                                            <input type="text" name="numero_tarjeta" placeholder="Ingresa tu número de tarjeta" aria-describedby="button-addon3" class="form-control border-0" required>
-                                            <div class="input-group-append border-0">
-                                                <button id="button-addon3" type="submit" class="btn btn-dark px-4 rounded-pill"><i class="fa fa-credit-card-alt mr-2"></i>Verifica tu tarjeta</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </form>
-                                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Instrucciones para el vendedor</div>
-                                <div class="p-4">
-                                    <p class="font-italic mb-4">Si tienes información para el vendedor, puedes dejarla en el cuadro a continuación</p>
-                                    <textarea name="" cols="30" rows="2" class="form-control"></textarea>
-                                </div>
-                            <php } else { // Muestra el resumen de compra solo si se proporciona el número de tarjeta ?>
-                                <div class="bg-light rounded-pill px-4 py-3 text-uppercase font-weight-bold">Resumen de compra</div>
-                                <div class="p-4">
-                                    <p class="font-italic mb-4">Los gastos de envío y los costos adicionales se calculan en función de los valores que has ingresado.</p>
-                                    <ul class="list-unstyled mb-4">
-                                        <li class="d-flex justify-content-between py-3 border-bottom"><strong class="text-muted">Subtotal del pedido</strong><strong>$<?= $monto_final ?></strong></li>
-                                        -- Puedes agregar más líneas según tus necesidades 
-                                    </ul>
-                                    <a href="#" class="btn btn-dark rounded-pill py-2 btn-block">Proceder al pago</a>
-                                </div>
-                            <php } ?> -->
