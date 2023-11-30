@@ -31,7 +31,7 @@ $resultUsuarios = $con->query($sqlUsuarios);
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <link rel="shortcut icon" href="images/icon-cookie.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../images/icon-cookie.png" type="image/x-icon">
       
         <title>
           Usuarios
@@ -41,19 +41,19 @@ $resultUsuarios = $con->query($sqlUsuarios);
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
       
         <!-- bootstrap core css -->
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
       
         <!-- Custom styles for this template -->
-        <link href="css/style.css" rel="stylesheet" />
+        <link href="../css/style.css" rel="stylesheet" />
         <!-- responsive style -->
-        <link href="css/responsive.css" rel="stylesheet" />
+        <link href="../css/responsive.css" rel="stylesheet" />
       </head>
 <body>
 <div class="hero_area">
         <!-- header section starts -->
         <header class="header_section">
             <nav class="navbar navbar-expand-lg custom_nav-container ">
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="../index.php">
                     <span>Coffee Admin</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -163,11 +163,11 @@ $resultUsuarios = $con->query($sqlUsuarios);
     </div>
     </section>
 
-    <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
-  <script src="js/custom.js"></script>
+  <script src="../js/custom.js"></script>
 
 </body>
 </html>

@@ -33,7 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['username'] = $row['nombre_usuario'];
 
             // Redirige a la página principal de usuario normal
-            header("Location: index.php");
+            header("Location: ../index.php");
             exit();
         }
     } else {

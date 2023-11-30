@@ -1,5 +1,17 @@
 <?php
 session_start();
+
+// Conectar a la base de datos (asegúrate de incluir tus credenciales de conexión)
+$con = mysqli_connect("localhost", "root", "", "coffeeshop");
+
+// Verificar la conexión
+if ($con->connect_error) {
+    die("Conexión fallida: " . $con->connect_error);
+}
+
+// Obtener todos los registros de la tabla de contacto de la base de datos
+$sqlContacto = "SELECT * FROM contacto";
+$resultContacto = $con->query($sqlContacto);
 ?>
 
 <!DOCTYPE html>
@@ -14,29 +26,29 @@ session_start();
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <link rel="shortcut icon" href="images/icon-cookie.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../images/icon-cookie.png" type="image/x-icon">
       
         <title>
-          Coffee Milk Admin
+          Contacto
         </title>
       
         <!-- slider stylesheet -->
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
       
         <!-- bootstrap core css -->
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
       
         <!-- Custom styles for this template -->
-        <link href="css/style.css" rel="stylesheet" />
+        <link href="../css/style.css" rel="stylesheet" />
         <!-- responsive style -->
-        <link href="css/responsive.css" rel="stylesheet" />
+        <link href="../css/responsive.css" rel="stylesheet" />
       </head>
 <body>
-    <div class="hero_area">
+<div class="hero_area">
         <!-- header section starts -->
         <header class="header_section">
             <nav class="navbar navbar-expand-lg custom_nav-container ">
-                <a class="navbar-brand" href="index.php">
+                <a class="navbar-brand" href="admin.php">
                     <span>Coffee Admin</span>
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -44,10 +56,9 @@ session_start();
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav  ">
-                        <li class="nav-item active">
-                        <a class="nav-link" href="admin.php">Inicio <span class="sr-only">(current)</span></a>
-                        </li>
+                    <ul class="navbar-nav ">
+                        <li class="nav-item ">
+                        <a class="nav-link" href="admin.php">Inicio 
                         <li class="nav-item">
                         <a class="nav-link" href="tabla_productos.php">
                             Productos
@@ -66,8 +77,9 @@ session_start();
                         <li class="nav-item">
                         <a class="nav-link" href="tabla_carrito_compras.php">Carrito de compras</a>
                         </li>
-                        <li class="nav-item">
-                        <a class="nav-link" href="tabla_contacto.php">Contacto</a>
+                        <li class="nav-item active">
+                        <a class="nav-link" href="tabla_contacto.php">Contacto<span class="sr-only">(current)</span></a>
+                        </li></a>
                         </li>
                     </ul>
                     <div class="user_option">
@@ -77,7 +89,7 @@ session_start();
                             echo '<span>Bienvenido, ' . $_SESSION['username'] . '</span>';
                             echo '<a href="profile.php"><i class="fa fa-user-circle" aria-hidden="true"></i> Mi Perfil</a>'; // Enlace a la página de perfil
                             echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>'; // Enlace para cerrar sesión
-                            // Icono de la bolsa de compras
+                            echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>'; // Icono de la bolsa de compras
                             echo '</div>';
                             }     else {
                         // Si no está autenticado, muestra el enlace de inicio de sesión
@@ -95,52 +107,62 @@ session_start();
             </nav>
         </header>
         <!-- end header section -->
-
-
-<!-- slider section -->
-<section class="slider_section">
-      <div class="slider_container">
-        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <div class="container-fluid">
-                <div class="row">
-                  <div class="col-md-7">
-                    <div class="detail-box">
-                      <h1>
-                        Administra <br>
-                        tu tienda
-                      </h1>
-                      <p>
-                      ¡Bienvenido al panel de administración de tu tienda en línea! 
-                      Aquí, puedes tener el control total de tu negocio digital. 
-                      Desde la gestión de productos hasta el historial de pedidos, 
-                      nuestro intuitivo sistema te permite supervisar y optimizar cada aspecto de tu tienda.
-                      </p>
-                      <a href="">
-                        Comienza ahora
-                      </a>
-                    </div>
-                  </div>
-                  <div class="col-md-5 ">
-                    <div class="img-box">
-                      <img src="images/cheff.png" alt="" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-        </div>
-    </div>
-  </div> 
-</section>
-
 </div>
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
+
+    <section class="shop_section layout_padding">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2>
+        Tabla de Contacto
+        </h2>
+      </div>
+
+
+        <?php
+        // Mostrar la tabla de contacto
+        echo '<table class="table">';
+        echo '<thead>';
+        echo '<tr>';
+        echo '<th style="text-align: center;">ID</th>';
+        echo '<th style="text-align: center;">Nombre</th>';
+        echo '<th style="text-align: center;">Email</th>';
+        echo '<th style="text-align: center;">Mensaje</th>';
+        // Agregar columnas adicionales según sea necesario
+        echo '</tr>';
+        echo '</thead>';
+        echo '<tbody>';
+
+        // Mostrar los registros de la tabla de contacto en la tabla
+        while ($row = $resultContacto->fetch_assoc()) {
+            echo '<tr>';
+            echo '<td style="text-align: center;">' . $row["ID"] . '</td>';
+            echo '<td style="text-align: center;">' . $row["nombre"] . '</td>';
+            echo '<td style="text-align: center;">' . $row["email"] . '</td>';
+            echo '<td style="text-align: center;">' . $row["mensaje"] . '</td>';
+            // Agregar columnas adicionales según sea necesario
+            echo '</tr>';
+        }
+
+        echo '</tbody>';
+        echo '</table>';
+        ?>
+
+        <!-- Puedes agregar formularios y lógica adicional según sea necesario -->
+
+    </div>
+
+    </section>
+
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
-  <script src="js/custom.js"></script>
+  <script src="../js/custom.js"></script>
 
 </body>
 </html>
+
+<?php
+// Cierra la conexión a la base de datos al finalizar la página
+$con->close();
+?>

@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
     agregarAlCarrito($id_producto);
 
     // Redirige de vuelta al catálogo o a donde sea necesario
-    header("Location: products.php");
+    header("Location: php/products.php");
     exit();
 }
 ?>
@@ -64,22 +64,22 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
               <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="products.php">
+              <a class="nav-link" href="php/products.php">
                 Productos
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="why.php">
+              <a class="nav-link" href="php/why.php">
                 Por qué nosotros
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="testimonial.php">
+              <a class="nav-link" href="php/testimonial.php">
                 Testimonios
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="contacto.php">Contáctanos</a>
+              <a class="nav-link" href="php/contacto.php">Contáctanos</a>
             </li>
           </ul>
           <div class="user_option">
@@ -87,14 +87,14 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
                 if (isset($_SESSION['username'])) {
                   echo '<div class="user_option">';
                   echo '<span>Bienvenido, ' . $_SESSION['username'] . '</span>';
-                  echo '<a href="profile.php"><i class="fa fa-user-circle" aria-hidden="true"></i> Mi Perfil</a>'; // Enlace a la página de perfil
-                  echo '<a href="logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>'; // Enlace para cerrar sesión
-                  echo '<a href="carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>'; // Icono de la bolsa de compras
+                  echo '<a href="php/profile.php"><i class="fa fa-user-circle" aria-hidden="true"></i> Mi Perfil</a>'; // Enlace a la página de perfil
+                  echo '<a href="php/logout.php"><i class="fa fa-sign-out" aria-hidden="true"></i> Cerrar sesión</a>'; // Enlace para cerrar sesión
+                  echo '<a href="php/carrito.php"><i class="fa fa-shopping-bag" aria-hidden="true"></i></a>'; // Icono de la bolsa de compras
                   echo '</div>';
                 }     else {
             // Si no está autenticado, muestra el enlace de inicio de sesión
                   echo '<div class="user_option">';
-                  echo '<a href="login.php">';
+                  echo '<a href="php/login.php">';
                   echo '<i class="fa fa-user" aria-hidden="true"></i>';
                   echo '<span>Login</span>';
                   echo '</a>';
@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
                        entre el arte del café y un ambiente relajado. Nos comprometemos a brindarte momentos inolvidables, 
                        taza tras taza. ¡Bienvenido a tu refugio cafetero!
                       </p>
-                      <a href="contact.php">
+                      <a href="php/contacto.php">
                         Contáctanos
                       </a>
                     </div>
@@ -157,7 +157,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
                       y bocadillos que complementarán tu experiencia. Nuestro compromiso es ofrecerte no solo una bebida, 
                       sino un deleite para tus sentidos. ¿Listo para sumergirte en un mundo de sabores y aromas inigualables?
                       </p>
-                      <a href="products.php">
+                      <a href="php/products.php">
                       Ver más
                       </a>
                     </div>
@@ -256,7 +256,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
           ?>
       </div>
       <div style="text-align: center; display: flex; align-items: center; justify-content: center;" class="btn-box">
-        <a href="products.php" style="display: inline-block;">
+        <a href="php/products.php" style="display: inline-block;">
           Ver todos los productos
         </a>
       </div>
@@ -287,10 +287,10 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
               Sumérgete en la experiencia de compra definitiva y encuentra tus nuevos favoritos. ¡Explora ahora y deja que tus elecciones hablen por sí mismas!
               </p>
               <div class="btn-box">
-                <a href="login.php" class="btn1">
+                <a href="php/login.php" class="btn1">
                   Compra ahora
                 </a>
-                <a href="products.php" class="btn2">
+                <a href="php/products.php" class="btn2">
                   Ver más
                 </a>
               </div>
@@ -581,7 +581,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
               es más que una bebida; es un abrazo en cada sorbo.
               </p>
               <div class="btn-box">
-                <a href="products.php" class="btn2">
+                <a href="php/products.php" class="btn2">
                 Comprar ahora
                 </a>
               </div>
@@ -612,7 +612,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET" && isset($_GET['id_producto'])) {
           </div>
         </div>
         <div class="col-md-6 col-lg-5 px-0">
-          <form action="testimonios.php" method="POST">>
+          <form action="php/testimonios.php" method="POST">>
             <div>
               <input type="text" placeholder="Nombre" />
             </div>

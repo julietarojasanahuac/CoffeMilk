@@ -3,7 +3,7 @@ session_start();
 
 // Verificar si el usuario está autenticado, de lo contrario redirigir a la página de inicio
 if (!isset($_SESSION['username'])) {
-    header("Location: index.php");
+    header("Location: ../index.php");
     exit();
 }
 
@@ -65,7 +65,7 @@ $con->close();
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <link rel="shortcut icon" href="images/icon-cookie.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../images/icon-cookie.png" type="image/x-icon">
       
         <title>
           Coffee Milk
@@ -75,12 +75,12 @@ $con->close();
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
       
         <!-- bootstrap core css -->
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
       
         <!-- Custom styles for this template -->
-        <link href="css/style.css" rel="stylesheet" />
+        <link href="../css/style.css" rel="stylesheet" />
         <!-- responsive style -->
-        <link href="css/responsive.css" rel="stylesheet" />
+        <link href="../css/responsive.css" rel="stylesheet" />
       </head>
 <body class="profile-body">
     <div class="hero_area">
@@ -88,7 +88,7 @@ $con->close();
     <!-- header section strats -->
     <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="../index.php">
           <span>
             Coffee Milk
           </span>
@@ -100,7 +100,7 @@ $con->close();
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  ">
             <li class="nav-item">
-              <a class="nav-link" href="index.php">Inicio <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="../index.php">Inicio <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="products.php">
@@ -173,7 +173,7 @@ $con->close();
                     <div class="col-md-4">
                         <div class="profile-work">
                             <h5>Navegador</h5>
-                            <a href="index.php">Inicio</a><br/>
+                            <a href="../index.php">Inicio</a><br/>
                             <a href="products.php">Productos</a><br/>
                             <a href="whyus.php">Nosotros</a><br/>
                             <a href="testimonial.php">Testimonios</a><br/>
@@ -244,7 +244,7 @@ $con->close();
                             </form>
                         <?php } else { ?>
                             <form method="post">
-                                <input type="submit" class="profile-edit-btn" name="btnSaveChanges" value="Guardar Cambios"/>
+                                <input type="submit" class="profile-edit-btn" name="btnSaveChanges" value="Guardar"/>
                             </form>
                     <?php } ?>
                     </div>
@@ -339,11 +339,11 @@ $con->close();
   <!-- end info section -->
 
 
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <script src="js/bootstrap.js"></script>
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
   </script>
-  <script src="js/custom.js"></script>
+  <script src="../js/custom.js"></script>
 
 </body>
 

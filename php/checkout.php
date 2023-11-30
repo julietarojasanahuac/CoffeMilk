@@ -43,7 +43,7 @@ $monto_final = calcularMontoFinal($_SESSION['carrito']);
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <link rel="shortcut icon" href="images/icon-cookie.png" type="image/x-icon">
+        <link rel="shortcut icon" href="../images/icon-cookie.png" type="image/x-icon">
       
         <title>
           Coffee Milk
@@ -53,19 +53,19 @@ $monto_final = calcularMontoFinal($_SESSION['carrito']);
         <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
       
         <!-- bootstrap core css -->
-        <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+        <link rel="stylesheet" type="text/css" href="../css/bootstrap.css" />
       
         <!-- Custom styles for this template -->
-        <link href="css/style.css" rel="stylesheet" />
+        <link href="../css/style.css" rel="stylesheet" />
         <!-- responsive style -->
-        <link href="css/responsive.css" rel="stylesheet" />
+        <link href="../css/responsive.css" rel="stylesheet" />
       </head>
 <body>
 <div class="hero_area">
      <!-- header section strats -->
      <header class="header_section">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="index.php">
+        <a class="navbar-brand" href="../index.php">
           <span>
             Coffee Milk
           </span>
@@ -77,7 +77,7 @@ $monto_final = calcularMontoFinal($_SESSION['carrito']);
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  ">
             <li class="nav-item active">
-              <a class="nav-link" href="index.php">Inicio<span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="../index.php">Inicio<span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="products.php">
@@ -167,6 +167,12 @@ $monto_final = calcularMontoFinal($_SESSION['carrito']);
 </div>
 
     <!-- Resto de tu código HTML -->
+
+  <script src="../js/jquery-3.4.1.min.js"></script>
+  <script src="../js/bootstrap.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js">
+  </script>
+  <script src="../js/custom.js"></script>
 
 </body>
 </html>

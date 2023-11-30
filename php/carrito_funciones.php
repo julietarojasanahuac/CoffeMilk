@@ -121,7 +121,7 @@ function mostrarCarrito($carrito) {
             echo '
                 <tr>
                     <td class="border-0">
-                        <img src="' . $imagen . '" alt="" width="70" class="img-fluid rounded shadow-sm">
+                        <img src="../' . $imagen . '" alt="" width="70" class="img-fluid rounded shadow-sm">
                     </td>
                     <td class="border-0">
                         <div class="ml-3">

@@ -31,7 +31,7 @@ if (mysqli_num_rows($result) > 0) {
             <div class="box">
                 <a href="#" data-toggle="modal" data-target="#modal' . $id_producto . '">
                     <div class="img-box">
-                        <img src="' . $foto_producto . '" alt="' . $nombre_producto . '">
+                        <img src="../'. $foto_producto . '" alt="' . $nombre_producto . '">
                     </div>
                     <div class="detail-box">
                         <h6>' . $nombre_producto . '</h6>
@@ -54,7 +54,7 @@ if (mysqli_num_rows($result) > 0) {
                     <div class="modal-body">
                         <div class="row">
                             <div class="col-md-6">
-                                <img src="' . $foto_producto . '" alt="' . $nombre_producto . '" class="img-fluid">
+                            <img src="../'. $foto_producto . '" alt="' . $nombre_producto . '" class="img-fluid">
                             </div>
                             <div class="col-md-6">
                                 <p>' . $descripcion_producto . '</p>
